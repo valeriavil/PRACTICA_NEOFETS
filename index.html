@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<!-- Hace que el sitio se adapte a celular -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Neon Fest</title>
+
+<!-- Conexión con CSS -->
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<header class="encabezado">
+    <nav class="navbar">
+        <h1 class="logo">Neon Fest</h1>
+
+        <button class="btn-menu" onclick="mostrarMenu()">☰</button>
+
+        <ul class="menu" id="menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#experiencias">Experiencias</a></li>
+            <li><a href="#boletos">Boletos</a></li>
+            <li><a href="#registro">Registro</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <span class="etiqueta">Festival 2026</span>
+            <h2>Vive una experiencia llena de música, luces y color.</h2>
+
+            <p>
+                Neon Fest reúne música, comida, arte digital y experiencias visuales
+                en un solo lugar. Un evento creado para disfrutar, compartir y vivir
+                una noche inolvidable.
+            </p>
+
+            <button onclick="mostrarPromo()">Ver promoción</button>
+        </div>
+
+        <div class="hero-imagen">
+            <img src="img/portada1.jpg" alt="Festival con luces de colores">
+        </div>
+    </section>
+
+    <!-- EXPERIENCIAS -->
+    <section class="seccion" id="experiencias">
+        <h2>Experiencias del evento</h2>
+        <p class="descripcion">
+            Cada zona del festival ofrece una actividad diferente para disfrutar.
+        </p>
+
+        <div class="contenedor-tarjetas">
+
+            <article class="tarjeta">
+                <img src="img/musica1.png" alt="Concierto">
+                <div class="tarjeta-info">
+                    <h3>Zona Música</h3>
+                    <p>
+                        Escenario principal con DJ, bandas invitadas, luces LED y sonido envolvente.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/comida1.jpg" alt="Comida">
+                <div class="tarjeta-info">
+                    <h3>Zona Food</h3>
+                    <p>
+                        Área gastronómica con snacks, bebidas, postres y comida urbana.
+                    </p>
+                </div>
+            </article>
+
+            <article class="tarjeta">
+                <img src="img/arte1.jpg" alt="Arte digital">
+                <div class="tarjeta-info">
+                    <h3>Zona Arte</h3>
+                    <p>
+                        Murales digitales, fotografías, luces interactivas y espacios para selfies.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- BOLETOS -->
+    <section class="seccion boletos" id="boletos">
+        <h2>Tipos de boletos</h2>
+
+        <div class="planes">
+
+            <article class="plan">
+                <h3>Básico</h3>
+                <p class="precio">$150</p>
+                <p>Acceso general al evento.</p>
+                <button onclick="seleccionarBoleto('Básico')">Elegir</button>
+            </article>
+
+            <article class="plan destacado">
+                <h3>Premium</h3>
+                <p class="precio">$280</p>
+                <p>Acceso general + zona preferente.</p>
+                <button onclick="seleccionarBoleto('Premium')">Elegir</button>
+            </article>
+
+            <article class="plan">
+                <h3>VIP</h3>
+                <p class="precio">$450</p>
+                <p>Acceso total + zona VIP + bebida incluida.</p>
+                <button onclick="seleccionarBoleto('VIP')">Elegir</button>
+            </article>
+
+        </div>
+
+        <p id="boletoSeleccionado"></p>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="seccion registro" id="registro">
+        <h2>Registro al evento</h2>
+
+        <form class="formulario" onsubmit="registrarUsuario(event)">
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" min="12" max="99" placeholder="Edad" required>
+
+            <label for="zona">Zona favorita:</label>
+            <select id="zona" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Música">Música</option>
+                <option value="Comida">Comida</option>
+                <option value="Arte digital">Arte digital</option>
+            </select>
+
+            <button type="submit">Enviar registro</button>
+        </form>
+
+        <p id="respuesta"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Neon Fest | Sitio responsivo con HTML5, CSS y JavaScript</p>
+</footer>
+
+<!-- Conexión con JS -->
+<script src="js/app.js"></script>
+
+</body>
+                  </html>
